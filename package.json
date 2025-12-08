@@ -1,0 +1,17 @@
+{
+  "name": "mdtopdf",
+  "version": "1.0.0",
+  "description": "MD to PDF Converter with Classic Windows UI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["markdown", "pdf", "converter"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "md-to-pdf": "^5.2.5"
+  }
+}
