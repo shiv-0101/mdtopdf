@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD to PDF Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">MD to PDF Converter</div>
+      <div class="title-bar-controls">
+        <button class="close-btn" id="close-btn">×</button>
+      </div>
+    </div>
+    
+    <div class="window-body">
+      <div class="field-row">
+        <label for="file-input">Select Markdown File:</label>
+      </div>
+      
+      <div class="field-row">
+        <input type="file" id="file-input" accept=".md,.markdown">
+      </div>
+      
+      <div class="button-group">
+        <button id="preview-btn" class="btn" disabled>Preview PDF</button>
+        <button id="download-btn" class="btn" disabled>Download PDF</button>
+      </div>
+      
+      <div class="status-box">
+        <div id="status">Ready</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
