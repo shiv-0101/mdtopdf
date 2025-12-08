@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  font-size: 11px;
+  background: #008080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.window {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
+
+.title-bar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  padding: 3px 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-bar-text {
+  flex-grow: 1;
+}
+
+.title-bar-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.close-btn {
+  width: 16px;
+  height: 14px;
+  padding: 0;
+  border: 1px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  background: #c0c0c0;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:active {
+  border-color: #000000 #ffffff #ffffff #000000;
+  background: #808080;
+}
+
+.window-body {
+  padding: 15px;
+  background: #c0c0c0;
+}
+
+.field-row {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="file"] {
+  padding: 3px;
+  background: white;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  width: 100%;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 5px 20px;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  background: #c0c0c0;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  outline: none;
+  min-width: 120px;
+}
+
+.btn:active:not(:disabled) {
+  border-color: #000000 #ffffff #ffffff #000000;
+  padding: 6px 19px 4px 21px;
+}
+
+.btn:disabled {
+  color: #808080;
+  cursor: default;
+}
+
+.status-box {
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: white;
+  padding: 8px;
+  min-height: 80px;
+}
+
+#status {
+  font-size: 11px;
+  word-wrap: break-word;
+}
