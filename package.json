@@ -4,7 +4,11 @@
   "description": "Lightweight Markdown to PDF converter with retro Windows 95 UI - Convert MD files to PDF instantly in your browser. No Electron, fast conversion, classic Windows interface. Perfect for developers, writers, and documentation.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'No build needed'"
+  },
+  "engines": {
+    "node": "18.x"
   },
   "keywords": ["markdown", "pdf", "converter"],
   "author": "",

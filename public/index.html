@@ -17,11 +17,34 @@
     
     <div class="window-body">
       <div class="field-row">
-        <label for="file-input">Select Markdown File:</label>
+        <label>
+          <input type="radio" name="input-mode" id="mode-file" checked>
+          Upload File
+        </label>
+        <label style="margin-left: 20px;">
+          <input type="radio" name="input-mode" id="mode-text">
+          Paste Text
+        </label>
       </div>
-      
-      <div class="field-row">
-        <input type="file" id="file-input" accept=".md,.markdown">
+
+      <div id="file-section">
+        <div class="field-row">
+          <label for="file-input">Select Markdown File:</label>
+        </div>
+        
+        <div class="field-row">
+          <input type="file" id="file-input" accept=".md,.markdown">
+        </div>
+      </div>
+
+      <div id="text-section" style="display: none;">
+        <div class="field-row">
+          <label for="md-text">Paste Markdown Text:</label>
+        </div>
+        
+        <div class="field-row">
+          <textarea id="md-text" rows="10"></textarea>
+        </div>
       </div>
       
       <div class="button-group">
