@@ -8,7 +8,7 @@
     "build": "echo 'No build needed'"
   },
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "keywords": ["markdown", "pdf", "converter"],
   "author": "",
