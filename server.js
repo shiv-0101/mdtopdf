@@ -29,23 +29,19 @@ app.post('/convert', upload.single('mdfile'), async (req, res) => {
     const outputFileName = `${Date.now()}.pdf`;
     const outputPath = path.join('output', outputFileName);
 
-    const puppeteerConfig = {
-      headless: true,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu'
-      ]
-    };
-
-    if (process.env.PUPPETEER_EXECUTABLE_PATH) {
-      puppeteerConfig.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
-    }
-
     await mdToPdf({ path: mdPath }, {
       dest: outputPath,
-      launch_options: puppeteerConfig
+      launch_options: {
+        headless: true,
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-gpu',
+          '--single-process',
+          '--no-zygote'
+        ]
+      }
     });
 
     fs.unlinkSync(mdPath);
