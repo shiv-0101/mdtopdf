@@ -2,12 +2,15 @@ services:
   - type: web
     name: mdtopdf
     env: node
-    buildCommand: npm install && npx puppeteer browsers install chrome
+    buildCommand: |
+      npm install
+      apt-get update
+      apt-get install -y chromium
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
         value: 20.11.0
       - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
-        value: false
-      - key: PUPPETEER_CACHE_DIR
-        value: /opt/render/.cache/puppeteer
+        value: true
+      - key: PUPPETEER_EXECUTABLE_PATH
+        value: /usr/bin/chromium
