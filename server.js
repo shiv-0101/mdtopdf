@@ -5,7 +5,7 @@ const fs = require('fs');
 const { mdToPdf } = require('md-to-pdf');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const upload = multer({ dest: 'uploads/' });
 
@@ -29,9 +29,23 @@ app.post('/convert', upload.single('mdfile'), async (req, res) => {
     const outputFileName = `${Date.now()}.pdf`;
     const outputPath = path.join('output', outputFileName);
 
+    const puppeteerConfig = {
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu'
+      ]
+    };
+
+    if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+      puppeteerConfig.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+    }
+
     await mdToPdf({ path: mdPath }, {
       dest: outputPath,
-      launch_options: { args: ['--no-sandbox'] }
+      launch_options: puppeteerConfig
     });
 
     fs.unlinkSync(mdPath);
